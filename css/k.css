@@ -1,0 +1,204 @@
+* {
+	font-family: 'Microgramma Extd D Medium', 'Microgramma Extd D', sans-serif;
+}
+
+html,body{
+    height: 100%
+}
+
+body {
+	align-items: center;
+	height: 98%;
+	justify-content: center;
+	overflow: hidden;
+}
+
+header {
+	background: #1c1c1c;
+	border: 1px solid #ccc;
+	color : #fff;
+	font-size: 1.5em;
+	padding: 4px;
+	margin: 20px;
+	color: #fff;
+}
+
+header a {
+	color: #fff;
+}
+
+.k-main {
+	margin-top: -20px;
+    padding-bottom: 80px;    /* height of footer */
+	position: relative;
+}
+
+section.k-tools {
+	border: 1px solid #1c1c1c;
+	color : #fff;
+	padding: 0px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 10px 20px 10px 20px;
+	text-align: center;
+	width: 80px;
+	height: 100px;
+}
+
+#k-tools span {
+	border: 1px solid #1c1c1c;
+	border-width: 0 0 1px 0;
+	color: #1c1c1c;
+	display: block;
+	font-size: 10px;
+	width: 100%;
+}
+
+section.k-canvas {
+	border: 1px solid #1c1c1c;
+	color : #fff;
+	padding: 0px;
+	position: absolute;
+	left: 100px;
+	top: 0;
+	margin: 10px;
+	text-align: center;
+}
+
+section.k-console {
+	border: 1px solid #1c1c1c;
+	color : #1c1c1c;
+	padding: 0px;
+	position: absolute;
+	margin: 10px;
+	text-align: center;
+}
+
+section.k-console label {
+	margin: 4px;
+}
+
+section.k-console input {
+	margin: 4px;
+}
+
+section.k-console button {
+	margin: 4px;
+}
+
+footer {
+	bottom: 0; 
+    left: 0;
+    position: absolute;
+	margin: 20px 0 20px 0;
+	width: 100%;
+}
+
+footer a {
+	color: #fff;
+}
+
+.footer-content {
+	background: #1c1c1c;
+	border: 1px solid #ccc;
+	color: #ccc;
+	font-size: 0.8em;
+    margin: 0 20px 0 20px;
+	padding: 4px;
+}
+
+.k-main {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#log {
+	border: 1px solid white;
+	height: 200px;
+	overflow-y: auto;
+}
+
+.k-data-button {
+	background: transparent;
+	border: 1px solid rgb(100,100,100);
+	color: rgb(100,100,100);
+	font-size: 0.8em;
+	padding: 0 2px;
+}
+
+.k-data-button:active, .k-data-button:hover {
+	border: 1px solid rgb(200,200,200);
+	color: rgb(200,200,200);
+}
+
+.k-game {
+	display: none;
+	font-size: 0.8em;
+}
+
+#k-game-data-table {
+	width: 100%;	
+}
+.k-game th, .k-game td {
+	border:1px solid #333;
+}
+
+h4 {
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+.k-tool-icon {
+	float: left;
+	height: 40px;
+	width: 40px;
+}
+
+.k-tool-active {
+	background-color: #ccc;
+}
+
+#k-console label {
+	display: inline-block;
+	font-variant: all-small-caps;
+	margin: 0;
+	width: 50px;
+}
+
+#k-console .k-coordinate {
+	display: inline-block;
+	width: 50px;
+}
