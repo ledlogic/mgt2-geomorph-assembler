@@ -18,11 +18,16 @@ kApp.tools = {
 		
 		$( "body" ).on( "keypress", function(e) {
 			kApp.log(e.which);
-			if((e.which == 61 ) || (e.which == 43 && e.shiftKey)){
+			if ((e.which == 61 ) || (e.which == 43 && e.shiftKey)) {
 				kApp.geom.zoom(0.5);
 			} 
-			if((e.which == 109 ) || (e.which == 45 )){
+			if ((e.which == 109 ) || (e.which == 45 )) {
 				kApp.geom.zoom(2.0);
+			} 
+			if (e.which == 103) {
+				kApp.render.settings.grid.major = !kApp.render.settings.grid.major;
+				kApp.render.settings.grid.minor = !kApp.render.settings.grid.minor;
+				kApp.render.settings.grid.ordinals = !kApp.render.settings.grid.ordinals;
 			} 
 		});
 	},
