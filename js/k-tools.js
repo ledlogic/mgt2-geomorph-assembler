@@ -15,6 +15,16 @@ kApp.tools = {
 		kApp.tools.$add = $add;
 		
 		kApp.tools.setActive("k-tool-precision");
+		
+		$( "body" ).on( "keypress", function(e) {
+			kApp.log(e.which);
+			if((e.which == 61 ) || (e.which == 43 && e.shiftKey)){
+				kApp.geom.zoom(0.5);
+			} 
+			if((e.which == 109 ) || (e.which == 45 )){
+				kApp.geom.zoom(2.0);
+			} 
+		});
 	},
 	
 	setActive: function(command) {

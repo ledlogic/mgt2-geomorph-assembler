@@ -41,6 +41,7 @@ kApp.geom = {
 		this.xcenter = 0.5 * (this.xMax + this.xMin);
 		this.ycenter = 0.5 * (this.yMax + this.yMin);
 	},	
+
 	rrect: function(xMin, yMin, xMax, yMax) {
 		this.xMin = xMin;
 		this.xMax = xMax;
@@ -184,6 +185,18 @@ kApp.geom = {
 	geoMean: function(x1, x2) {
 		var ret = Math.sqrt(x1 * x1 + x2 * x2);
 		return ret;
+	},
+		
+	zoom: function(factor) {
+		kApp.log(factor);
+		
+		kApp.geom.map.rrect.width = kApp.geom.map.rrect.width * factor;
+		kApp.geom.map.rrect.height = kApp.geom.map.rrect.height * factor;
+		
+		kApp.geom.map.rrect.xMin = kApp.geom.map.rrect.xcenter - 0.5 * kApp.geom.map.rrect.width;
+		kApp.geom.map.rrect.xMax = kApp.geom.map.rrect.xcenter + 0.5 * kApp.geom.map.rrect.width;
+		kApp.geom.map.rrect.yMin = kApp.geom.map.rrect.xcenter - 0.5 * kApp.geom.map.rrect.height;
+		kApp.geom.map.rrect.yMax = kApp.geom.map.rrect.xcenter + 0.5 * kApp.geom.map.rrect.height;
 	}
 
 };
