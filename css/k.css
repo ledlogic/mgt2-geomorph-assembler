@@ -195,10 +195,28 @@ h4 {
 	display: inline-block;
 	font-variant: all-small-caps;
 	margin: 0;
-	width: 50px;
+	width: 30px;
 }
 
 #k-console .k-coordinate {
 	display: inline-block;
 	width: 50px;
+}
+
+#k-console .k-geomorph {
+	display: inline-block;
+	width: 80px;
+	font-size: 12px;
+}
+#k-geomorph-x {
+	left: 10;
+}
+#k-geomorph-y {
+	left: 10;
+}
+#k-geomorph-w {
+	left: 10;
+}
+#k-geomorph-h {
+	left: 10;
 }

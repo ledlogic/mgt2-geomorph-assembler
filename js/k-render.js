@@ -113,8 +113,8 @@ kApp.render = {
 			//kApp.log(g.selected);
 			
 			if (g.selected) {
-				stroke(0, 0, 50);
-				fill(0, 0, 50);
+				stroke(255, 165, 0);
+				fill(255, 165, 0);
 				
 				// bl
 				rect(cx - 0.5 * kApp.render.selectDim, cy - 0.5 * kApp.render.selectDim, kApp.render.selectDim, kApp.render.selectDim, 0);

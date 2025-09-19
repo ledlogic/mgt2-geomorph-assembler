@@ -3,6 +3,7 @@ kApp.geomorphs = {
 	scale: 0.265,
 
 	init: function() {
+		kApp.geomorphs.select(null);
 	},
 	add: function() {
 		var img = kApp.img.imgs[0];
@@ -18,8 +19,8 @@ kApp.geomorphs = {
 		geomorph.img = loadImage("img/geomorphs/" + img.name);
 
 		kApp.geomorphs.list.push(geomorph);
-		
-		kApp.log(geomorph);
+		kApp.geomorphs.select(geomorph);
+		//kApp.log(geomorph);
 	},
 	log: function(g) {
 		var s = "";
@@ -49,10 +50,18 @@ kApp.geomorphs = {
 	select: function(g) {
 		kApp.log("select");
 		kApp.geomorphs.log(g);
+		var bFound = false;
 		_.each(kApp.geomorphs.list, function(geomorph) {
 			var b = (geomorph == g);
 			kApp.log("b[" + b + "]");
 			geomorph.selected = b;
+			if (b) {
+				bFound = true;
+				kApp.console.updateGeomorph(geomorph);
+			}
 		});
+		if (!bFound) {
+			kApp.console.updateGeomorph(null);
+		}
 	}
 };

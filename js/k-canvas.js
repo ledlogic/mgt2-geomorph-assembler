@@ -27,8 +27,8 @@ kApp.canvas = {
 		var cPt = new kApp.geom.cPt(mouseX, mouseY);
 		var rPt = kApp.geom.cPt2rPt(cPt.x, cPt.y);
 		var g = kApp.geomorphs.geomorphAtRpt(rPt);
-		kApp.log("mouseClick, g[" + g + "]");
-		kApp.geomorphs.log(g);
+		//kApp.log("mouseClick, g[" + g + "]");
+		//kApp.geomorphs.log(g);
 		kApp.geomorphs.select(g);
 	},
 	sizeCanvas: function() {
