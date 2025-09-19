@@ -6,7 +6,6 @@ kApp.render = {
 		grid: {
 			major: true,
 			minor: true,
-			ellipses: false,
 			ordinals: true
 		}
 	},
@@ -76,19 +75,6 @@ kApp.render = {
 				var pt1 = kApp.geom.rPt2Cpt(xMin, y);
 				var pt2 = kApp.geom.rPt2Cpt(xMax, y);
 				line(Math.max(0,pt1.x), Math.max(0,pt1.y), Math.min(kApp.geom.map.crect.width,pt2.x), Math.min(kApp.geom.map.crect.height,pt2.y));
-			}
-		}
-		
-		// major ellipses
-		if (kApp.render.settings.grid.ellipses) {
-			noFill();
-			var pt1 = kApp.geom.rPt2Cpt(0, 0);
-			for (var x=xMin; x<0; x+= major) {
-				var pt2 = kApp.geom.rPt2Cpt(-x, 0);
-				var pt3 = kApp.geom.rPt2Cpt(x, 0);
-				var w = Math.abs(pt2.x-pt3.x);
-				var h = Math.abs(pt2.x-pt3.x);
-				ellipse(pt1.x, pt1.y, w, h);
 			}
 		}
 		
