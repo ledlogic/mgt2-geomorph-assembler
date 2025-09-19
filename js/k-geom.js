@@ -217,6 +217,17 @@ kApp.geom = {
 		kApp.geom.map.rrect.xMax = xMax + w * dx * scale;
 		kApp.geom.map.rrect.yMin = yMin + h * dy * scale;
 		kApp.geom.map.rrect.yMax = yMax + h * dy * scale;
+	},
+	
+	translateGeomorph: function(geomorph, dx, dy) {
+		var w = kApp.geom.map.rrect.width;
+		var h = kApp.geom.map.rrect.height;
+
+		var scale = kApp.geom.scale;
+		geomorph.x = geomorph.x + dx * 100;
+		geomorph.y = geomorph.y + dy * 100;
+		
+		kApp.console.updateGeomorph(geomorph);
 	}
 
 };

@@ -18,17 +18,18 @@ kApp.tools = {
 		
 		$( "body" ).on( "keydown", function(e) {
 			kApp.log(e.which);
+			
 			if (e.keyCode == 37) {
-				kApp.geom.translate(-1,0);
+				kApp.tools.translate(-1,0);
 			}
 			if (e.keyCode == 38) {
-				kApp.geom.translate(0,1);
+				kApp.tools.translate(0,1);
 			}
 			if (e.keyCode == 39) {
-				kApp.geom.translate(1,0);
+				kApp.tools.translate(1,0);
 			}
 			if (e.keyCode == 40) {
-				kApp.geom.translate(0,-1);
+				kApp.tools.translate(0,-1);
 			}
 		});
 		
@@ -47,6 +48,15 @@ kApp.tools = {
 				kApp.render.settings.grid.ordinals = !kApp.render.settings.grid.ordinals;
 			}
 		});
+	},
+	
+	translate: function(dx, dy) {
+		var geomorph = kApp.geomorphs.selectedGeomorph();
+		if (geomorph) {
+			kApp.geom.translateGeomorph(geomorph, dx, dy);
+		} else {
+			kApp.geom.translate(dx, dy);
+		}
 	},
 	
 	setActive: function(command) {
