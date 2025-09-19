@@ -51,9 +51,13 @@ kApp.console = {
 		} else {
 			this.$geomorph.hide();
 		}
-		this.$gx.val(x);
-		this.$gy.val(y);
-		this.$gw.val(w);
-		this.$gh.val(h);
+		kApp.console.roundVal(this.$gx, x);
+		kApp.console.roundVal(this.$gy, y);
+		kApp.console.roundVal(this.$gw, w);
+		kApp.console.roundVal(this.$gh, h);
+	},
+	roundVal:function($el, f) {
+		f = Math.round(f * 100.0) / 100.0;
+		$el.val(f);
 	}
 }

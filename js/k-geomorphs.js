@@ -1,6 +1,6 @@
 kApp.geomorphs = {
 	list:[],
-	scale: 0.265,
+	scale: 0.264026402645,
 
 	init: function() {
 		kApp.geomorphs.select(null);
