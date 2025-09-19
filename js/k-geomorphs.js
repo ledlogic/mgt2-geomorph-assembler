@@ -55,6 +55,7 @@ kApp.geomorphs = {
 			var b = (geomorph == g);
 			kApp.log("b[" + b + "]");
 			geomorph.selected = b;
+			this.geomorph = geomorph;
 			if (b) {
 				bFound = true;
 				kApp.console.updateGeomorph(geomorph);
@@ -63,5 +64,12 @@ kApp.geomorphs = {
 		if (!bFound) {
 			kApp.console.updateGeomorph(null);
 		}
+	},
+	selectedGeomorph: function() {
+		var ret = null;
+		_.each(kApp.geomorphs.list, function(geomorph) {
+			ret = geomorph.selected ? geomorph : ret;
+		});
+		return ret;
 	}
 };
