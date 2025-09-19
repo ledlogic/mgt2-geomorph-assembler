@@ -10,6 +10,7 @@ kApp.canvas = {
 		
 		$elCanvas.on("mouseover", kApp.canvas.mouseOver);
 		$elCanvas.on("mousemove", kApp.canvas.mouseMove);
+		$elCanvas.on("click", kApp.canvas.mouseClick);
 	},
 	mouseOver: function() {
 		var cPt = new kApp.geom.cPt(mouseX, mouseY);
@@ -20,6 +21,15 @@ kApp.canvas = {
 		var cPt = new kApp.geom.cPt(mouseX, mouseY);
 		var rPt = kApp.geom.cPt2rPt(cPt.x, cPt.y);
 		kApp.console.updateCoordinates(rPt);
+	},
+	mouseClick: function() {
+		kApp.log("mouseClick");
+		var cPt = new kApp.geom.cPt(mouseX, mouseY);
+		var rPt = kApp.geom.cPt2rPt(cPt.x, cPt.y);
+		var g = kApp.geomorphs.geomorphAtRpt(rPt);
+		kApp.log("mouseClick, g[" + g + "]");
+		kApp.geomorphs.log(g);
+		kApp.geomorphs.select(g);
 	},
 	sizeCanvas: function() {
 		var toolsWidth = 100;

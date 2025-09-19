@@ -16,18 +16,16 @@ kApp.geom = {
 	cPt: function(x, y) {
 		this.x = x;
 		this.y = y;
-
-		this.toString = function() {
-			return this.x + "," + this.y;
-		}
 	},
 	rPt: function(x, y) {
 		this.x = x;
 		this.y = y;
-		
-		this.toString = function() {
-			return this.x + "," + this.y;
-		}
+	},
+	logCpt: function(cPt) {
+		kApp.log(cPt);
+	},
+	logRpt: function(rPt) {
+		kApp.log(rPt);
 	},
 
 	// rect constructors

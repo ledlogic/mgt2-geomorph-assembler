@@ -1,13 +1,11 @@
 kApp.console = {
-	
 	$x: null,
 	$y: null,
 	
 	init: function() {
-		// canvas
+		// mouse coordinates
 		var $x = $('#k-coordinate-x');
 		var $y = $('#k-coordinate-y');
-
 		this.$x = $x;
 		this.$y = $y;
 	},

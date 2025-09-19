@@ -94,6 +94,9 @@ kApp.render = {
 			}
 		}
 	},
+	
+	selectDim: 4,
+	
 	geomorphs: function() {
 		_.each(kApp.geomorphs.list, function(g, i) {
 			var pt1 = kApp.geom.rPt2Cpt(g.x, g.y);
@@ -106,7 +109,22 @@ kApp.render = {
 			var h = pt2.y - pt3.y;
 			image(g.img, cx, cy, w, h);
 			
-			kApp.log("cx[" + cx + "], cy[" + cy + "], w[" + w + "], h[" + h + "]");
+			//kApp.log("cx[" + cx + "], cy[" + cy + "], w[" + w + "], h[" + h + "]");
+			//kApp.log(g.selected);
+			
+			if (g.selected) {
+				stroke(0, 0, 50);
+				fill(0, 0, 50);
+				
+				// bl
+				rect(cx - 0.5 * kApp.render.selectDim, cy - 0.5 * kApp.render.selectDim, kApp.render.selectDim, kApp.render.selectDim, 0);
+				// br
+				rect(cx + w - 0.5 * kApp.render.selectDim, cy - 0.5 * kApp.render.selectDim, kApp.render.selectDim, kApp.render.selectDim, 0);
+				// tl
+				rect(cx - 0.5 * kApp.render.selectDim, cy + h - 0.5 * kApp.render.selectDim, kApp.render.selectDim, kApp.render.selectDim, 0);
+				// tr
+				rect(cx + w - 0.5 * kApp.render.selectDim, cy + h - 0.5 * kApp.render.selectDim, kApp.render.selectDim, kApp.render.selectDim, 0);
+			}
 		});
 	}
 };
