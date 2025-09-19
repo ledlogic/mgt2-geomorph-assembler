@@ -1,6 +1,7 @@
 kApp.geom = {
 
 	rDistance: 5,
+	scale: 0.5,
 		
 	// map data
 	map: {
@@ -186,7 +187,7 @@ kApp.geom = {
 	},
 		
 	zoom: function(factor) {
-		kApp.log(factor);
+		//kApp.log(factor);
 		
 		kApp.geom.map.rrect.width = kApp.geom.map.rrect.width * factor;
 		kApp.geom.map.rrect.height = kApp.geom.map.rrect.height * factor;
@@ -195,6 +196,27 @@ kApp.geom = {
 		kApp.geom.map.rrect.xMax = kApp.geom.map.rrect.xcenter + 0.5 * kApp.geom.map.rrect.width;
 		kApp.geom.map.rrect.yMin = kApp.geom.map.rrect.xcenter - 0.5 * kApp.geom.map.rrect.height;
 		kApp.geom.map.rrect.yMax = kApp.geom.map.rrect.xcenter + 0.5 * kApp.geom.map.rrect.height;
+	},
+	
+	translate: function(dx, dy) {
+		//kApp.log([dx, dy]);
+		
+		var xcenter = kApp.geom.map.rrect.xcenter;
+		var ycenter = kApp.geom.map.rrect.ycenter;
+		var xMin = kApp.geom.map.rrect.xMin;
+		var xMax = kApp.geom.map.rrect.xMax;
+		var yMin = kApp.geom.map.rrect.yMin;
+		var yMax = kApp.geom.map.rrect.yMax;
+		var w = kApp.geom.map.rrect.width;
+		var h = kApp.geom.map.rrect.height;
+
+		var scale = kApp.geom.scale;
+		kApp.geom.map.rrect.xcenter = xcenter + w * dx * scale;
+		kApp.geom.map.rrect.ycenter = ycenter + h * dy * scale;
+		kApp.geom.map.rrect.xMin = xMin + w * dx * scale;
+		kApp.geom.map.rrect.xMax = xMax + w * dx * scale;
+		kApp.geom.map.rrect.yMin = yMin + h * dy * scale;
+		kApp.geom.map.rrect.yMax = yMax + h * dy * scale;
 	}
 
 };

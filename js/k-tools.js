@@ -16,19 +16,36 @@ kApp.tools = {
 		
 		kApp.tools.setActive("k-tool-precision");
 		
+		$( "body" ).on( "keydown", function(e) {
+			kApp.log(e.which);
+			if (e.keyCode == 37) {
+				kApp.geom.translate(-1,0);
+			}
+			if (e.keyCode == 38) {
+				kApp.geom.translate(0,1);
+			}
+			if (e.keyCode == 39) {
+				kApp.geom.translate(1,0);
+			}
+			if (e.keyCode == 40) {
+				kApp.geom.translate(0,-1);
+			}
+		});
+		
 		$( "body" ).on( "keypress", function(e) {
 			kApp.log(e.which);
+
 			if ((e.which == 61 ) || (e.which == 43 && e.shiftKey)) {
 				kApp.geom.zoom(0.5);
 			} 
 			if ((e.which == 109 ) || (e.which == 45 )) {
 				kApp.geom.zoom(2.0);
-			} 
+			}
 			if (e.which == 103) {
 				kApp.render.settings.grid.major = !kApp.render.settings.grid.major;
 				kApp.render.settings.grid.minor = !kApp.render.settings.grid.minor;
 				kApp.render.settings.grid.ordinals = !kApp.render.settings.grid.ordinals;
-			} 
+			}
 		});
 	},
 	
