@@ -258,5 +258,18 @@ kApp.img = {
 		{ "name": "vc3.png", "width": 3195, "height": 2430 }],
 		
 	init: function() {
+	},
+	
+	getImgByName: function(name) {
+		var ret = null;
+		var imgs = kApp.img.imgs;
+		_.each(imgs, function(img) {
+			if (!ret) {
+				if (img.name == name) {
+					ret = img;
+				}
+			}
+		});
+		return ret;
 	}
 };

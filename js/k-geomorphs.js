@@ -16,11 +16,14 @@ kApp.geomorphs = {
 		geomorph.h = img.height * kApp.geomorphs.scale;
 		geomorph.selected = true;
 		
-		geomorph.img = loadImage("img/geomorphs/" + img.name);
+		kApp.geomorphs.changeGeomorphImg(geomorph, img);
 
 		kApp.geomorphs.list.push(geomorph);
 		kApp.geomorphs.select(geomorph);
 		//kApp.log(geomorph);
+	},
+	changeGeomorphImg: function(geomorph, img) {
+		geomorph.img = loadImage("img/geomorphs/" + img.name);
 	},
 	log: function(g) {
 		var s = "";

@@ -9,6 +9,8 @@ kApp.console = {
 	$gw: null,
 	$gh: null,
 	
+	$gsrc: null,
+	
 	init: function() {
 		// mouse coordinates
 		var $coordinates = $("#k-coordinates");
@@ -37,6 +39,24 @@ kApp.console = {
 		$gy.on("change", kApp.console.changeGeomorph);
 		$gw.on("change", kApp.console.changeGeomorph);
 		$gh.on("change", kApp.console.changeGeomorph);
+		
+		$gsrc = $geomorph.find('#k-geomorph-src');
+		_.each(kApp.img.imgs, function(img) {
+			kApp.log(img);
+			$gsrc.append("<option value=\"" + img.name + "\">" + img.name + "</option>");
+		});
+		$gsrc.on("change", kApp.console.changeImg);
+	},
+	changeImg: function(sel) {
+		var name = $(this).val();
+		//kApp.log(src);
+		var geomorph = kApp.geomorphs.selectedGeomorph();
+		if (geomorph) {
+			var img = kApp.img.getImgByName(name);
+			if (img) {
+				kApp.geomorphs.changeGeomorphImg(geomorph, img);
+			}
+		}
 	},
 	updateCoordinates: function(rPt) {
 		this.$x.html(rPt.x);
@@ -68,8 +88,8 @@ kApp.console = {
 		var rh = kApp.console.getVal(kApp.console.$gh);
 		
 		var geomorph = kApp.geomorphs.selectedGeomorph();
-		kApp.log("geomorph");
-		kApp.geomorphs.log(geomorph);
+		//kApp.log("geomorph");
+		//kApp.geomorphs.log(geomorph);
 		if (geomorph) {
 			geomorph.x = rx;
 			geomorph.y = ry;
